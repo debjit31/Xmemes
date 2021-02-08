@@ -1,0 +1,9 @@
+<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/custom_records_not_found.css') }}"></link>
+<div class = "main-div">
+    <h1 class="header-1">We cound not find the record you were looking for</h1>
+        <form action = "{{ url_for('memes') }}" method = "get">
+            <button type = "submit" id = "home-button">Home</button>
+        </form>
+</div>
+
+

@@ -1,0 +1,61 @@
+img{
+    border : 3px solid black;
+    width : 420px;
+    height : 420px;
+}
+#edit-btn{
+    float: left;
+    background-color: #455cdf;
+    font-size: 15px;
+    padding : 5px;
+    font-family : Tahoma;
+    color: white;
+    border : 4px solid #455cdf;
+    border-radius : 6px;
+}
+p{
+    word-break: break-all;
+}
+.root-container{
+    width: 100%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+.pro-header{
+    font-size :  35px;
+    color : black;
+    font-family: Courier;
+    position: fixed;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.post{
+    padding : 5px 15px;
+    width: fit-content;
+    border : 2px solid black ;
+    text-align : left;
+}
+.name-btn-contrl{
+    width: 100%;
+    display: flex;
+    justify-content : space-between;
+    align-items : center;
+}
+.btn-contrl{
+    text-align:center;
+    width: fit-content;
+}
+.btn-contrl form{
+    margin: 6px;
+}
+#del-btn{
+    float: left;
+    background-color: hsl(0, 74%, 56%);
+    font-size: 15px;
+    padding : 5px;
+    font-family : Tahoma;
+    color: white;
+    border : 4px solid  hsl(0, 74%, 56%);
+    border-radius : 6px;
+}

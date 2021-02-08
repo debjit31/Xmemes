@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href = "{{ url_for('static', filename='css/home.css') }}">
+    <title>XMeme</title>
+</head>
+<body>
+    <a style = "text-decoration: none;" href = "{{ url_for('memes') }}"><h1 class="pro-header">XMeme</h1></a>
+    <div class="top-half">
+        <h1>Meme Stream</h1>
+        {% for message in get_flashed_messages() %}
+            <h3 class = "top-half-error-messages">{{ message }}</h3>
+        {% endfor %}
+        <div class="myform">
+            <form action = "/" method = "post">
+                <label class = "label-text" for="name">Name</label><br>
+                <input type="text" name = "name" placeholder = "Enter your full name" required>
+                <br>
+                <label class = "label-text" for="caption">Caption</label><br>
+                <input type="text" name = "caption" placeholder = "Be creative with the caption" required>
+                <br>
+                <label class = "label-text" for="meme-url">Meme URL</label><br>
+                <input type="url" name = "meme-url" placeholder = "Enter URl of your meme here" required><br>
+                <button type = "submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <h3 id = "btm-half-head" >Recent Posts</h3>
+    <div class="flex-container">
+        {% for post in posts %}
+            <div class="post-item">
+                <a style = "text-decoration: none; "href = "{{ url_for('view_a_meme', post_id = post.id) }}">
+                <p class="author-name-and-date">Posted by <b>{{ post.author }}</b> on {{ post.date_posted }}</p>
+                <p class="post-caption">{{ post.caption }}</p>
+                <img src="{{ post.image_link }}" alt="some meme">
+                </a>
+            </div>
+        {% endfor %}
+    </div>    
+</body>
+</html>
